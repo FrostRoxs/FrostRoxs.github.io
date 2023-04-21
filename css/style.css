@@ -1,0 +1,236 @@
+:root{
+    --color-grey:#302d2d;
+    --color-white:#fff;
+    --color-red:#ba2649;
+    --color-transp: #ffffff1a;
+    font-size: 12px;
+    print-color-adjust : exact;
+    -webkit-print-color-adjust : exact;
+}
+
+/***************** Appliquer au 2 div *****************/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rajdhani', sans-serif;
+}
+body{
+    display: flex;
+    background-color: grey;
+    margin: 5%;
+}
+.style_main{
+    display: flex;
+    flex-shrink: 0;
+    width: 21cm;
+    height: 29.7cm;
+    margin: auto;
+    background-color: var(--color-white);
+    box-shadow: 0 0 30px 15px #0008;
+}
+.div_gauche .trait{
+    width: 85%;
+    height: 1px;
+    background-color: var(--color-red);
+    margin: 5px 0 10px auto;
+}
+/************************ Imprimé ************************/
+@media print {
+    body{
+        margin: 0;
+    }
+    .style_main{
+        box-shadow: none;
+    }
+    @page{
+        margin: 0;
+    }
+    #pp{
+        filter:none;
+    }
+}
+/***************** Div Gauche *****************/
+.div_gauche{
+    flex: 1;
+    background-color: var(--color-grey);
+    color: var(--color-white);
+}
+.div_gauche h2{
+    margin: 20px 0 0 15%;
+}
+.div_gauche ul{
+    margin-left: 40px;
+}
+.div_gauche h3{
+    margin-left: 40px;
+}
+/************* Photo d'identité ***************/
+#pp{
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    filter: saturate(0);
+    transition: filter .5s ease-in-out;
+    object-position: bottom;
+    background: linear-gradient(var(--color-red),var(--color-grey));
+}
+#pp:hover{
+    filter: saturate(1);
+}
+/************* Formation ***************/
+.formation ul{
+    list-style: none;
+}
+.formation article{
+    margin: 20px;
+    font-size: 13px;
+}
+/************* Certification ***************/
+.certification ul{
+    list-style: none;
+}
+.certification article{
+    margin: 20px;
+    font-size: 13px;
+}
+/************* Langues ***************/
+.langues .trio{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    text-align: center;
+    padding: 0 10%;
+}
+.langues article{
+    flex: 1;
+    font-size: 13px;
+}
+.langues img{
+    width: 3em;
+    margin: 10px;
+}
+/************* Contact ***************/
+.contact h2{
+    background-color: var(--color-transp);
+    margin-left: 0;
+    padding-left: 20%;
+    position: relative;
+    z-index: 0;
+    
+}
+.contact h2::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 15%;
+    background-color: var(--color-red);
+}
+.contact h2::after{
+    content: '';
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--color-red);
+    top: 0;
+    left: 15%;
+    z-index: -1;
+    transition: width 0.5s ease-in;
+}
+.contact article:hover h2::after{
+    width: 85%;
+}
+.telephone p,.mail a,.adresse p{
+    margin-left: 20%;
+    font-size: 13px;
+    color: var(--color-white);
+}
+/***************** Div Droite *****************/
+.div_droite{
+    flex: 2;
+    margin-top: 70px;
+    color: black;
+    font-weight: bold;
+}
+.div_droite .trait{
+    width: 85%;
+    height: 1px;
+    background-color: var(--color-red);
+    margin: auto;
+}
+.contenue_droit h2{
+    margin: 20px 0 10px 40px;
+    font-weight: bold;
+    color: var(--color-red);
+}
+/***************** Section Nom *****************/
+h1, h2, h3 {
+    font-weight: normal;
+}
+.nom{
+    background-color: var(--color-red);
+    padding: 40px;
+}
+.nom h1{
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: var(--color-white);
+    text-shadow: 0 0px 7px var(--color-grey);
+}
+.nom h2{
+    color: var(--color-white);
+    text-shadow: 0 0px 7px var(--color-grey);
+}
+.nom span{
+    font-weight: bold;
+}
+/***************** A propos de moi *****************/
+.a_propos_moi p{
+    margin: 10px 40px;
+    font-size: 13px;
+}
+/***************** Mes Compétences *****************/
+.competences ul{
+    margin-left: 20px;
+}
+.competences article{
+    margin: 10px 40px;
+    font-size: 13px;
+}
+.competences h3{
+    margin: 10px 0;
+    font-weight: bold;
+}
+/***************** Mes Expériences *****************/
+.experiences ul{
+    list-style: none;
+}
+.experiences article{
+    margin: 10px 40px;
+    font-size: 13px;
+}
+.experiences h3{
+    margin: 10px 0;
+    font-weight: bold;
+}
+/***************** Me Trouver *****************/
+.me_trouver img{
+    margin: 20px 0 0 40px;
+}
+.me_trouver a:hover img{
+    transform: scale(1.1);
+}
+.me_trouver a {
+    text-decoration: none;
+}
+#github{
+    height: 55px;
+}
+#linkedin{
+    height: 55px;
+}
+/***************** Me Trouver *****************/
+@media (max-device-width : 900px){
+
+}
