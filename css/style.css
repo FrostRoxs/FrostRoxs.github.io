@@ -220,6 +220,7 @@ h1, h2, h3 {
 }
 .me_trouver a {
     text-decoration: none;
+    color: black;
 }
 .me_trv_2{
     display: flex;
